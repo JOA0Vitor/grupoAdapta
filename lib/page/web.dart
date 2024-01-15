@@ -16,13 +16,11 @@ class _webState extends State<web> {
           Container(
             height: 100,
             decoration: BoxDecoration(
-                color: Color(0xFF7D37D2),
-              
-               ),
+                color: Color(0xFF7D37D2), ),
             child:  Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Image.asset('assets/logo.png'),
+                Image.asset('../assets/logo.png'),
                 // Text('saude de todos',style: TextStyle(color:Color(0xFFFFFFFF) ),), //aqui é uma imagem
                 const Row(
                   children: [//colocar uma variavel para as cor
@@ -38,17 +36,40 @@ class _webState extends State<web> {
             ),
           ),
           Stack(
+            
             children: [
-               Image.network(
-              'https://storage.alboom.ninja/sites/2356/albuns/953849/ensaio-familia-dia-dos-pais-estudio-35.jpg?t=1643547990', // Substitua pela URL real da sua imagem
+               Image.asset(
+              '../assets/teste.png', // Substitua pela URL real da sua imagem
               width: double.infinity,
-              height: double.infinity,
+              height:630,
               fit: BoxFit.cover,
             ),
-              Text('diversidade'),
-              Text('em todos locais'),
-              Text('consultoria. palestras. cursos'),
-              TextButton(onPressed: ()=> {}, child: Text('Saiba mais'))
+              Positioned.fill(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    const Text('diversidade',style: TextStyle(color:Color(0xFFFFFFFF),fontSize: 200 )),
+                    Text('em todos locais',style: TextStyle(color:Color(0xFFFFFFFF),fontSize: 100 )),
+                    Text('consultoria. palestras. cursos',style: TextStyle(color:Color(0xFFFFFFFF),fontSize: 30 )),
+                    
+                    
+                    Padding(
+                      padding: const EdgeInsets.all(50.0),
+                      child: ElevatedButton(
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF7D37D2)), // Substitua pela cor desejada
+                            shape: MaterialStateProperty.all<OutlinedBorder>(RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(50),
+                            )),
+                          ),
+                        onPressed: () {},
+                        child: Text('Saiba Mais'),
+                      ),
+                    ),
+                  ],
+                ),
+              )
             ],
           ) 
           
