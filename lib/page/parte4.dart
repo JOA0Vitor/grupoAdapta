@@ -8,6 +8,8 @@ class parte4 extends StatefulWidget {
 }
 
 class _parte4State extends State<parte4> {
+  TextEditingController _newsletterController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -22,24 +24,55 @@ class _parte4State extends State<parte4> {
 
   Widget _buildNewsletterSection() {
     return Container(
+      padding: const EdgeInsets.all(20.0),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Text('Newsletter'),
-          Padding(
-            padding: const EdgeInsets.all(30.0),
-            child: ElevatedButton(
-              style: ButtonStyle(
-                backgroundColor:
-                    MaterialStateProperty.all<Color>(Color(0xFF7D37D2)),
-                shape: MaterialStateProperty.all<OutlinedBorder>(
-                  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(50),
+          Text(
+            'Newsletter',
+            style: TextStyle(color: Color(0xFF260E43), fontSize: 40),
+          ),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10.0),
+              child: Stack(
+                alignment: Alignment.bottomCenter,
+                children: [
+                  TextFormField(
+                    controller: _newsletterController,
+                    decoration: InputDecoration(
+                      labelText: 'Digite seu e-mail',
+                      labelStyle: TextStyle(color: Color(0xFF260E43)),
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Color(0xFF260E43)),
+                      ),
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Color(0xFF260E43)),
+                      ),
+                    ),
                   ),
+                  Image.asset(
+                    '../assets/email.png', // Substitua pelo caminho da sua imagem
+                    height: 24,
+                    width: 24,
+                  ),
+                ],
+              ),
+            ),
+          ),
+          ElevatedButton(
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF7D37D2)),
+              shape: MaterialStateProperty.all<OutlinedBorder>(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(50),
                 ),
               ),
-              onPressed: () {},
-              child: Text('Enviar'),
+            ),
+            onPressed: () {},
+            child: Text(
+              'Enviar',
+              style: TextStyle(color: Colors.white),
             ),
           ),
         ],
@@ -49,6 +82,7 @@ class _parte4State extends State<parte4> {
 
   Widget _buildInfoSection() {
     return Container(
+      height: 300,
       width: double.infinity,
       color: Color(0xFF3B146B),
       child: Center(
@@ -61,34 +95,32 @@ class _parte4State extends State<parte4> {
               height: 80,
             ),
             Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   'onde estamos?',
-                  style: TextStyle(fontSize: 18),
                 ),
                 Text(
                   'Lorem ipsum dolor sit amer, 500, Santo André | SP',
-                  style: TextStyle(fontSize: 18),
                 ),
               ],
             ),
             Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   'Quer dizer oi?',
-                  style: TextStyle(fontSize: 18),
                 ),
                 Text(
                   'contato@saudetodes.com.br',
-                  style: TextStyle(fontSize: 18),
                 ),
               ],
             ),
             Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   'Encontre-nos nas redes sociais',
-                  style: TextStyle(fontSize: 18),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -117,14 +149,20 @@ class _parte4State extends State<parte4> {
   Widget _buildFooterSection() {
     return Container(
       width: double.infinity,
+      height: 80,
       color: Color(0xFF3B146B),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text('2022 TODOS OS DIREITOS RESERVADOS.',
-  style: TextStyle(fontSize: 18),),
-          Text('CONVERGÊNCIA',
-  style: TextStyle(fontSize: 18),),
+          Text(
+            '2022 TODOS OS DIREITOS RESERVADOS.',
+            style: TextStyle(fontSize: 18, color: Colors.white),
+          ),
+          Text(
+            'CONVERGÊNCIA',
+            style: TextStyle(fontSize: 18, color: Colors.white),
+          ),
         ],
       ),
     );

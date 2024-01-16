@@ -8,12 +8,12 @@ class parte3 extends StatefulWidget {
 }
 
 class _parte3State extends State<parte3> {
-  final bgColor = Color.fromARGB(255, 42, 25, 63);
+  final bgColor = Color.fromARGB(255, 120, 69, 134);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color(0xFF361448), // Cor de fundo desejada
+      color: Color.fromARGB(255, 76, 24, 101), // Cor de fundo desejada
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -31,6 +31,9 @@ class _parte3State extends State<parte3> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+               const SizedBox(
+                height: 80,
+              ),
               Image.asset(
                 '../assets/menu-1.png',
                 fit: BoxFit.cover,
@@ -64,6 +67,8 @@ class _parte3State extends State<parte3> {
       },
       {
         'imagePath': '../assets/test.png',
+        
+
         'date': 'consultoria / jul 21, 2022',
         'text': 'lorem ipsum',
       },
@@ -84,7 +89,7 @@ class _parte3State extends State<parte3> {
           width: 300,
           height: 250,
           decoration: BoxDecoration(
-            color: Color(0xFF361448),
+            color: Color(0xFF632573),
             border: Border(
               bottom: BorderSide(
                 color: bgColor,
