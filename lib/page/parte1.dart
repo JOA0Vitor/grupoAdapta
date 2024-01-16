@@ -18,7 +18,7 @@ class _parte1State extends State<parte1> {
       children: [
         _buildTopBar(),
         _buildStackWithImage(),
-        _buildBottomBar(),
+       
       ],
     );
   }
@@ -158,14 +158,7 @@ class _parte1State extends State<parte1> {
     );
   }
 
-  Widget _buildBottomBar() {
-    return Image.asset(
-      '../assets/bg.png',
-      height: 15,
-      width: double.infinity,
-      fit: BoxFit.cover,
-    );
-  }
+  
 }
 
 

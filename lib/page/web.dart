@@ -14,15 +14,17 @@ class web extends StatefulWidget {
 class _webState extends State<web> {
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-          children: [
-            parte1(),
-            parte2(),
-            parte3(),
-            parte4()
-            ],
-    
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Column(
+            children: [
+              parte1(),
+              parte2(),
+              parte3(),
+              parte4()
+              ],
+      
+        ),
       ),
     );
     

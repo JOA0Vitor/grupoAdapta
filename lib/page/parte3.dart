@@ -8,47 +8,50 @@ class parte3 extends StatefulWidget {
 }
 
 class _parte3State extends State<parte3> {
-  final bgColor = Color(0xFF220E3A);
+  final bgColor = Color.fromARGB(255, 42, 25, 63);
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 160, vertical: 50),
-          child: Text(
-            'Blog',
-            style: TextStyle(fontSize: 55),
+    return Container(
+      color: Color(0xFF361448), // Cor de fundo desejada
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 160, vertical: 50),
+            child: Text(
+              'Blog',
+              style: TextStyle(fontSize: 55, color: Color(0xFFFFFFFF)),
+            ),
           ),
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: _buildColumnItems(),
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(
-              '../assets/menu-1.png',
-              fit: BoxFit.cover,
-            ),
-            Image.asset(
-              '../assets/menu-2.png',
-              fit: BoxFit.cover,
-            ),
-            Image.asset(
-              '../assets/menu-3.png',
-              fit: BoxFit.cover,
-            ),
-          ],
-        ),
-        Image.asset(
-          '../assets/bg.png',
-          width: double.infinity,
-          fit: BoxFit.cover,
-        ),
-      ],
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: _buildColumnItems(),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(
+                '../assets/menu-1.png',
+                fit: BoxFit.cover,
+              ),
+              Image.asset(
+                '../assets/menu-2.png',
+                fit: BoxFit.cover,
+              ),
+              Image.asset(
+                '../assets/menu-3.png',
+                fit: BoxFit.cover,
+              ),
+            ],
+          ),
+          Image.asset(
+            '../assets/bg.png',
+            width: double.infinity,
+            fit: BoxFit.cover,
+          ),
+        ],
+      ),
     );
   }
 
@@ -57,17 +60,17 @@ class _parte3State extends State<parte3> {
       {
         'imagePath': '../assets/test.png',
         'date': 'consultoria / jul 21, 2022',
-        'text': 'lorem ipsum'
+        'text': 'lorem ipsum',
       },
       {
         'imagePath': '../assets/test.png',
         'date': 'consultoria / jul 21, 2022',
-        'text': 'lorem ipsum'
+        'text': 'lorem ipsum',
       },
       {
         'imagePath': '../assets/test.png',
         'date': 'consultoria / jul 21, 2022',
-        'text': 'lorem ipsum'
+        'text': 'lorem ipsum',
       },
     ];
 
@@ -81,6 +84,7 @@ class _parte3State extends State<parte3> {
           width: 300,
           height: 250,
           decoration: BoxDecoration(
+            color: Color(0xFF361448),
             border: Border(
               bottom: BorderSide(
                 color: bgColor,
@@ -105,11 +109,13 @@ class _parte3State extends State<parte3> {
         Text(
           item['date']!,
           style: TextStyle(
-              fontSize: 15), // Ajuste o tamanho da fonte conforme necessário
+            fontSize: 15,
+            color: Color(0xFFFFFFFF),
+          ),
         ),
         Text(
           item['text']!,
-          style: TextStyle(fontSize: 25),
+          style: TextStyle(fontSize: 25, color: Color(0xFFFFFFFF)),
         ),
       ],
     );
