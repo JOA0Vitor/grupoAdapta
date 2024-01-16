@@ -35,15 +35,15 @@ class _parte3State extends State<parte3> {
                 height: 80,
               ),
               Image.asset(
-                '../assets/menu-1.png',
+                '../assets/botoes_menu/menu-1.png',
                 fit: BoxFit.cover,
               ),
               Image.asset(
-                '../assets/menu-2.png',
+                '../assets/botoes_menu/menu-2.png',
                 fit: BoxFit.cover,
               ),
               Image.asset(
-                '../assets/menu-3.png',
+                '../assets/botoes_menu/menu-3.png',
                 fit: BoxFit.cover,
               ),
             ],
@@ -61,19 +61,19 @@ class _parte3State extends State<parte3> {
   List<Widget> _buildColumnItems() {
     List<Map<String, String>> columnData = [
       {
-        'imagePath': '../assets/test.png',
+        'imagePath': '../assets/cards/test.png',
         'date': 'consultoria / jul 21, 2022',
         'text': 'lorem ipsum',
       },
       {
-        'imagePath': '../assets/test.png',
+        'imagePath': '../assets/cards/test.png',
         
 
         'date': 'consultoria / jul 21, 2022',
         'text': 'lorem ipsum',
       },
       {
-        'imagePath': '../assets/test.png',
+        'imagePath': '../assets/cards/test.png',
         'date': 'consultoria / jul 21, 2022',
         'text': 'lorem ipsum',
       },

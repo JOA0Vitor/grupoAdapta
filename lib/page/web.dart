@@ -4,6 +4,7 @@ import 'package:myapp/page/parte2.dart';
 import 'package:myapp/page/parte3.dart';
 import 'package:myapp/page/parte4.dart';
 
+
 class web extends StatefulWidget {
   const web({super.key});
 

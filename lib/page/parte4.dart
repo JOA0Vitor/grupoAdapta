@@ -23,62 +23,73 @@ class _parte4State extends State<parte4> {
   }
 
   Widget _buildNewsletterSection() {
-    return Container(
-      padding: const EdgeInsets.all(20.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Text(
-            'Newsletter',
-            style: TextStyle(color: Color(0xFF260E43), fontSize: 40),
-          ),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10.0),
-              child: Stack(
-                alignment: Alignment.bottomCenter,
-                children: [
-                  TextFormField(
-                    controller: _newsletterController,
-                    decoration: InputDecoration(
-                      labelText: 'Digite seu e-mail',
-                      labelStyle: TextStyle(color: Color(0xFF260E43)),
-                      enabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Color(0xFF260E43)),
-                      ),
-                      focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Color(0xFF260E43)),
-                      ),
-                    ),
-                  ),
-                  Image.asset(
-                    '../assets/email.png', // Substitua pelo caminho da sua imagem
-                    height: 24,
-                    width: 24,
-                  ),
-                ],
+  return Container(
+    height: 300,
+    padding: const EdgeInsets.all(20.0),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        Text(
+          'Newsletter',
+          style: TextStyle(color: Color(0xFF260E43), fontSize: 40),
+        ),
+        SizedBox(
+          width: 10,
+        ), // Adiciona um espaço entre o texto e o TextFormField
+        Container(
+          width: 500, // Adjust the width as per your requirement
+          child: Stack(
+            alignment: Alignment.centerLeft,
+            children: [
+              Image.asset(
+                '../assets/email.png', // Substitua pelo caminho da sua imagem
+                height: 24,
+                width: 24,
               ),
-            ),
-          ),
-          ElevatedButton(
-            style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF7D37D2)),
-              shape: MaterialStateProperty.all<OutlinedBorder>(
-                RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(50),
+              Positioned(
+                left: 35, // Ajusta o posicionamento horizontal do texto
+                // Ajusta o posicionamento vertical do texto
+                child: Text(
+                  ' seu e-mail',
+                  style: TextStyle(color: Color(0xFF260E43)),
                 ),
               ),
-            ),
-            onPressed: () {},
-            child: Text(
-              'Enviar',
-              style: TextStyle(color: Colors.white),
+              TextFormField(
+                controller: _newsletterController,
+                decoration: InputDecoration(
+                  // Remova o labelText, pois ele será coberto pela imagem
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xFF260E43)),
+                  ),
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xFF260E43)),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        ElevatedButton(
+          style: ButtonStyle(
+            backgroundColor:
+                MaterialStateProperty.all<Color>(Color(0xFF7D37D2)),
+            shape: MaterialStateProperty.all<OutlinedBorder>(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(50),
+              ),
             ),
           ),
-        ],
-      ),
-    );
-  }
+          onPressed: () {},
+          child: Text(
+            'Enviar',
+            style: TextStyle(color: Colors.white),
+          ),
+        ),
+      ],
+    ),
+  );
+}
+
 
   Widget _buildInfoSection() {
     return Container(
@@ -91,7 +102,7 @@ class _parte4State extends State<parte4> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.asset(
-              '../assets/logo.png',
+              '../assets/logos/logo_footer.png',
               height: 80,
             ),
             Column(
@@ -99,9 +110,11 @@ class _parte4State extends State<parte4> {
               children: [
                 Text(
                   'onde estamos?',
+                  style: TextStyle(fontSize: 18, color: Colors.white),
                 ),
                 Text(
                   'Lorem ipsum dolor sit amer, 500, Santo André | SP',
+                  style: TextStyle(fontSize: 18, color: Colors.white),
                 ),
               ],
             ),
@@ -110,9 +123,11 @@ class _parte4State extends State<parte4> {
               children: [
                 Text(
                   'Quer dizer oi?',
+                  style: TextStyle(fontSize: 18, color: Colors.white),
                 ),
                 Text(
                   'contato@saudetodes.com.br',
+                  style: TextStyle(fontSize: 18, color: Colors.white),
                 ),
               ],
             ),
@@ -121,14 +136,15 @@ class _parte4State extends State<parte4> {
               children: [
                 Text(
                   'Encontre-nos nas redes sociais',
+                  style: TextStyle(fontSize: 18, color: Colors.white),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Image.asset('../assets/instagram.png'),
-                    Image.asset('../assets/facebook.png'),
-                    Image.asset('../assets/linkedin.png'),
-                    Image.asset('../assets/linkedin.png'),
+                    Image.asset('../assets/redes_sociais/instagram.png'),
+                    Image.asset('../assets/redes_sociais/facebook.png'),
+                    Image.asset('../assets/redes_sociais/linkedin.png'),
+                    Image.asset('../assets/redes_sociais/linkedin.png'),
                   ],
                 ),
               ],
@@ -156,7 +172,7 @@ class _parte4State extends State<parte4> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            '2022 TODOS OS DIREITOS RESERVADOS.',
+            '© 2022 TODOS OS DIREITOS RESERVADOS.',
             style: TextStyle(fontSize: 18, color: Colors.white),
           ),
           Text(

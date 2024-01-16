@@ -33,18 +33,18 @@ class _parte1State extends State<parte1> {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Image.asset(
-            '../assets/logo.png',
+            '../assets/logos/logo.png',
             height: 80,
           ),
           Row(
             children: [
-              _buildMenuItem('Inicio', '../assets/Inicio.png'),
+              _buildMenuItem('Inicio', '../assets/header/Inicio.png'),
               _buildMenuItem(
-                  'Conheça a gente', '../assets/conheca_a_gente.png'),
-              _buildMenuItem('Clínica', '../assets/clinica.png'),
-              _buildMenuItem('Educação', '../assets/educacao.png'),
-              _buildMenuItem('Blog', '../assets/blog.png'),
-              _buildMenuItem('Contato', '../assets/contato.png'),
+                  'Conheça a gente', '../assets/header/conheca_a_gente.png'),
+              _buildMenuItem('Clínica', '../assets/header/clinica.png'),
+              _buildMenuItem('Educação', '../assets/header/educacao.png'),
+              _buildMenuItem('Blog', '../assets/header/blog.png'),
+              _buildMenuItem('Contato', '../assets/header/contato.png'),
             ],
           ),
         ],
@@ -73,7 +73,7 @@ class _parte1State extends State<parte1> {
       children: [
         const SizedBox(height: 60),
         Image.asset(
-          '../assets/home.png',
+          '../assets/header/home.png',
           width: double.infinity,
           height: double.tryParse('source'),
           fit: BoxFit.cover,
@@ -143,15 +143,15 @@ class _parte1State extends State<parte1> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Image.asset(
-          '../assets/menu_1.png',
+          '../assets/botoes_menu/menu_1.png',
           fit: BoxFit.cover,
         ),
         Image.asset(
-          '../assets/menu-2.png',
+          '../assets/botoes_menu/menu-2.png',
           fit: BoxFit.cover,
         ),
         Image.asset(
-          '../assets/menu-3.png',
+          '../assets/botoes_menu/menu-3.png',
           fit: BoxFit.cover,
         ),
       ],

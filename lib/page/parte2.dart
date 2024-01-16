@@ -35,12 +35,12 @@ class _parte2State extends State<parte2> {
         Positioned(
           bottom: -20,
           right: 70,
-          child: Image.asset('../assets/orgulho.png'),
+          child: Image.asset('../assets/logo_lateral/orgulho.png'),
         ),
         Positioned(
           bottom: 50,
           right: 130,
-          child: Image.asset('../assets/bg-orgulho.png'),
+          child: Image.asset('../assets/logo_lateral/bg-orgulho.png'),
         ),
       ],
     );
@@ -63,9 +63,9 @@ class _parte2State extends State<parte2> {
               'Ginecologia Endócrina',
               'lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna alique',
             ),
-            _buildImageServiceContainer('../assets/test.png', 'Sexualidade'),
+            _buildImageServiceContainer('../assets/cards/test.png', 'Sexualidade'),
             _buildImageServiceContainer(
-                '../assets/test.png', 'Ginecologia Geral'),
+                '../assets/cards/test.png', 'Ginecologia Geral'),
           ],
         ),
       ],
