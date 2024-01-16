@@ -40,10 +40,11 @@ class _webState extends State<web> {
                         children: [
                           Image.asset(
                             '../assets/Inicio.png',
-                             height: 5,
+                            height: 5,
                           ),
                           Text(' Inicio   ',
-                              style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 21)),
+                              style: TextStyle(
+                                  color: Color(0xFFFFFFFF), fontSize: 21)),
                         ],
                       ),
                       Row(
@@ -53,48 +54,52 @@ class _webState extends State<web> {
                             height: 5,
                           ),
                           Text(' Conheça a gente   ',
-                              style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 21
-                              )),
+                              style: TextStyle(
+                                  color: Color(0xFFFFFFFF), fontSize: 21)),
                         ],
                       ), //vai ter uma option
                       Row(
                         children: [
                           Image.asset(
                             '../assets/clinica.png',
-                             height: 5,
+                            height: 5,
                           ),
                           Text(' Clínica   ',
-                              style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 21)),
+                              style: TextStyle(
+                                  color: Color(0xFFFFFFFF), fontSize: 21)),
                         ],
                       ),
                       Row(
                         children: [
                           Image.asset(
                             '../assets/educacao.png',
-                             height: 5,
+                            height: 5,
                           ),
                           Text(' Educação   ',
-                              style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 21)),
+                              style: TextStyle(
+                                  color: Color(0xFFFFFFFF), fontSize: 21)),
                         ],
                       ),
                       Row(
                         children: [
                           Image.asset(
                             '../assets/blog.png',
-                             height: 5,
+                            height: 5,
                           ),
                           Text(' Blog   ',
-                              style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 21)),
+                              style: TextStyle(
+                                  color: Color(0xFFFFFFFF), fontSize: 21)),
                         ],
                       ),
                       Row(
                         children: [
                           Image.asset(
                             '../assets/contato.png',
-                             height: 5,
+                            height: 5,
                           ),
                           Text(' Contato   ',
-                              style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 21)),
+                              style: TextStyle(
+                                  color: Color(0xFFFFFFFF), fontSize: 21)),
                         ],
                       ),
                     ],
@@ -144,16 +149,47 @@ class _webState extends State<web> {
                           child: Text('Saiba Mais'),
                         ),
                       ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            //olha isso
+                            '../assets/menu-1.png',
+                            fit: BoxFit.cover,
+                          ),
+                          Image.asset(
+                            //olha isso
+                            '../assets/menu-2.png',
+                            fit: BoxFit.cover,
+                          ),
+                          Image.asset(
+                            //olha isso
+                            '../assets/menu-3.png',
+                            fit: BoxFit.cover,
+                          ),
+                        ],
+                      ),
                     ],
                   ),
                 )
               ],
             ),
+            Image.asset(
+              //olha isso
+              '../assets/bg.png',
+              height: 15,
+              width: double.infinity,
+              fit: BoxFit.cover,
+            ),
             Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Text('Clínica',
-                    style: TextStyle(fontSize: 55)), //colocar full esquerda
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 160, vertical: 50),
+                  child: Text('Clínica', style: TextStyle(fontSize: 55)),
+                ), //colocar full esquerda
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -332,17 +368,33 @@ class _webState extends State<web> {
                     ),
                   ],
                 ),
+                const SizedBox(
+                  height: 40,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Image.asset(
-                      '../assets/arrow-left.png',
+                    CircleAvatar(
+                      radius: 30, // Ajuste o raio conforme necessário
+                      backgroundColor: Color.fromARGB(
+                          89, 70, 16, 89), // Cor de fundo do círculo
+                      child: Image.asset(
+                        '../assets/arrow-left.png',
+                        height: 40, // Ajuste a altura conforme necessário
+                      ),
                     ),
-                    Image.asset(
-                      '../assets/arrow-right.png',
+                    CircleAvatar(
+                      radius: 30, // Ajuste o raio conforme necessário
+                      backgroundColor:
+                          Color(0x6340184A), // Cor de fundo do círculo
+                      child: Image.asset(
+                        '../assets/arrow-right.png',
+                        height: 40, // Ajuste a altura conforme necessário
+                      ),
                     ),
                   ],
                 ),
+
                 Stack(
                   children: [
                     const SizedBox(
@@ -394,15 +446,57 @@ class _webState extends State<web> {
                   ],
                 ),
                 Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'Blog',
-                      style: TextStyle(fontSize: 55),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 160, vertical: 50),
+                      child: Text(
+                        'Blog',
+                        style: TextStyle(fontSize: 55),
+                      ),
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
+                        Column(
+                          //1
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Container(
+                              width: 300,
+                              height: 250,
+                              decoration: BoxDecoration(
+                                border: Border(
+                                  bottom: BorderSide(
+                                    color: borderColor, // Cor da borda
+                                    width: 20, // Largura da borda
+                                  ),
+                                ),
+                              ),
+                              child: Stack(
+                                children: [
+                                  Image.asset(
+                                    '../assets/test.png', // Substitua pela URL real da sua imagem
+                                    width: double.infinity,
+                                    height: double.tryParse('source'),
+                                    fit: BoxFit.cover,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            Text(
+                              'consultoria / jul 21, 2022',
+                            ),
+                            Text(
+                              'lorem ipsum',
+                              style: TextStyle(fontSize: 25),
+                            ),
+                          ],
+                        ),
                         Column(
                           //1
                           children: [
@@ -410,15 +504,16 @@ class _webState extends State<web> {
                               width: 300,
                               height: 250,
                               decoration: BoxDecoration(
-                                border: Border.all(
-                                    color: borderColor,
-                                    width:
-                                        20), // Adiciona uma borda preta de 2 pixels
+                                border: Border(
+                                  bottom: BorderSide(
+                                    color: borderColor, // Cor da borda
+                                    width: 20, // Largura da borda
+                                  ),
+                                ),
                               ),
                               child: Stack(
                                 children: [
                                   Image.asset(
-                                    //olha isso
                                     '../assets/test.png', // Substitua pela URL real da sua imagem
                                     width: double.infinity,
                                     height: double.tryParse('source'),
@@ -426,6 +521,9 @@ class _webState extends State<web> {
                                   ),
                                 ],
                               ),
+                            ),
+                            const SizedBox(
+                              height: 20,
                             ),
                             Text(
                               'consultoria / jul 21, 2022',
@@ -437,20 +535,23 @@ class _webState extends State<web> {
                           ],
                         ),
                         Column(
+                          //1
+
                           children: [
                             Container(
                               width: 300,
                               height: 250,
                               decoration: BoxDecoration(
-                                border: Border.all(
-                                    color: borderColor,
-                                    width:
-                                        20), // Adiciona uma borda preta de 2 pixels
+                                border: Border(
+                                  bottom: BorderSide(
+                                    color: borderColor, // Cor da borda
+                                    width: 20, // Largura da borda
+                                  ),
+                                ),
                               ),
                               child: Stack(
                                 children: [
                                   Image.asset(
-                                    //olha isso
                                     '../assets/test.png', // Substitua pela URL real da sua imagem
                                     width: double.infinity,
                                     height: double.tryParse('source'),
@@ -459,39 +560,10 @@ class _webState extends State<web> {
                                 ],
                               ),
                             ),
-                            Text(
-                              'consultoria / jul 21, 2022',
+                            const SizedBox(
+                              height: 20,
                             ),
-                            Text(
-                              'lorem ipsum',
-                              style: TextStyle(fontSize: 25),
-                            ),
-                          ],
-                        ),
-                        Column(
-                          //tem outra foto e o botão de +
-                          children: [
-                            Container(
-                              width: 300,
-                              height: 250,
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                    color: borderColor,
-                                    width:
-                                        20), // Adiciona uma borda preta de 2 pixels
-                              ),
-                              child: Stack(
-                                children: [
-                                  Image.asset(
-                                    //olha isso
-                                    '../assets/test.png', // Substitua pela URL real da sua imagem
-                                    width: double.infinity,
-                                    height: double.tryParse('source'),
-                                    fit: BoxFit.cover,
-                                  ),
-                                ],
-                              ),
-                            ),
+                            
                             Text(
                               'consultoria / jul 21, 2022',
                             ),
