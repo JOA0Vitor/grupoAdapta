@@ -11,6 +11,7 @@ class web extends StatefulWidget {
 class _webState extends State<web> {
   final Color borderColor = Color(0xFF220E3A);
   final Color buttonColor = Color(0xFF7D37D2);
+  TextEditingController _textController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -105,7 +106,7 @@ class _webState extends State<web> {
                 Text('Clínica',
                     style: TextStyle(fontSize: 55)), //colocar full esquerda
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Container(
                       width: 300,
@@ -334,15 +335,199 @@ class _webState extends State<web> {
                       ),
                     ),
                     Positioned(
-                      bottom: 50, 
-                      right: 130, 
-                      child: Image.asset('../assets/bg-orgulho.png')
-                    ),
+                        bottom: -20,
+                        right: 70,
+                        child: Image.asset('../assets/orgulho.png')),
+                    Positioned(
+                        bottom: 50,
+                        right: 130,
+                        child: Image.asset('../assets/bg-orgulho.png')),
                   ],
                 ),
-                Container(
-                  height: 100,
-                 child: Text('Blog', style: TextStyle(fontSize: 55),),
+                Column(
+                  children: [
+                    Text(
+                      'Blog',
+                      style: TextStyle(fontSize: 55),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Column(
+                          //1
+                          children: [
+                            Container(
+                              width: 300,
+                              height: 250,
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                    color: borderColor,
+                                    width:
+                                        20), // Adiciona uma borda preta de 2 pixels
+                              ),
+                              child: Stack(
+                                children: [
+                                  Image.asset(
+                                    //olha isso
+                                    '../assets/test.png', // Substitua pela URL real da sua imagem
+                                    width: double.infinity,
+                                    height: double.tryParse('source'),
+                                    fit: BoxFit.cover,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Text(
+                              'consultoria / jul 21, 2022',
+                            ),
+                            Text(
+                              'lorem ipsum',
+                              style: TextStyle(fontSize: 25),
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Container(
+                              width: 300,
+                              height: 250,
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                    color: borderColor,
+                                    width:
+                                        20), // Adiciona uma borda preta de 2 pixels
+                              ),
+                              child: Stack(
+                                children: [
+                                  Image.asset(
+                                    //olha isso
+                                    '../assets/test.png', // Substitua pela URL real da sua imagem
+                                    width: double.infinity,
+                                    height: double.tryParse('source'),
+                                    fit: BoxFit.cover,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Text(
+                              'consultoria / jul 21, 2022',
+                            ),
+                            Text(
+                              'lorem ipsum',
+                              style: TextStyle(fontSize: 25),
+                            ),
+                          ],
+                        ),
+                        Column(
+                          //tem outra foto e o botão de +
+                          children: [
+                            Container(
+                              width: 300,
+                              height: 250,
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                    color: borderColor,
+                                    width:
+                                        20), // Adiciona uma borda preta de 2 pixels
+                              ),
+                              child: Stack(
+                                children: [
+                                  Image.asset(
+                                    //olha isso
+                                    '../assets/test.png', // Substitua pela URL real da sua imagem
+                                    width: double.infinity,
+                                    height: double.tryParse('source'),
+                                    fit: BoxFit.cover,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Text(
+                              'consultoria / jul 21, 2022',
+                            ),
+                            Text(
+                              'lorem ipsum',
+                              style: TextStyle(fontSize: 25),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                          //olha isso
+                          '../assets/menu-1.png',
+                          fit: BoxFit.cover,
+                        ),
+                        Image.asset(
+                          //olha isso
+                          '../assets/menu-2.png',
+                          fit: BoxFit.cover,
+                        ),
+                        Image.asset(
+                          //olha isso
+                          '../assets/menu-3.png',
+                          fit: BoxFit.cover,
+                        ),
+                      ],
+                    ),
+                    Image.asset(
+                      //olha isso
+                      '../assets/bg.png',
+                      width: double.infinity,
+                      fit: BoxFit.cover,
+                    ),
+                    Container(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text('Newsletter'),
+                          Padding(
+                            padding: const EdgeInsets.all(16.0),
+                            child: Column(
+                              children: [
+                                TextFormField(
+                                  controller: _textController,
+                                  decoration: InputDecoration(
+                                    labelText: 'Nome',
+                                    prefixIcon: Icon(Icons.person),
+                                  ),
+                                ),
+                                SizedBox(height: 16.0),
+                                ElevatedButton(
+                                  onPressed: () {
+                                    // Aqui você pode realizar alguma ação com o valor do campo de texto
+                                    String nome = _textController.text;
+                                    print('Nome digitado: $nome');
+                                  },
+                                  child: Text('Enviar'),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(50.0),
+                            child: ElevatedButton(
+                              style: ButtonStyle(
+                                backgroundColor:
+                                    MaterialStateProperty.all<Color>(Color(
+                                        0xFF7D37D2)), // Substitua pela cor desejada
+                                shape:
+                                    MaterialStateProperty.all<OutlinedBorder>(
+                                        RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(50),
+                                )),
+                              ),
+                              onPressed: () {},
+                              child: Text('Enviar'),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 )
               ],
             )
