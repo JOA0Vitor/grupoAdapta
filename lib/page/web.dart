@@ -11,7 +11,6 @@ class web extends StatefulWidget {
 class _webState extends State<web> {
   final Color borderColor = Color(0xFF220E3A);
   final Color buttonColor = Color(0xFF7D37D2);
-  TextEditingController _textController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -33,22 +32,71 @@ class _webState extends State<web> {
                     height: 80,
                   ),
                   // Text('saude de todos',style: TextStyle(color:Color(0xFFFFFFFF) ),), //aqui é uma imagem
-                  const Row(
+                  Row(
                     children: [
                       //colocar uma variavel para as cor
-                      Text('- Inicio ',
-                          style: TextStyle(color: Color(0xFFFFFFFF))),
-                      Text('- conheça a gente ',
-                          style: TextStyle(
-                              color: Color(0xFFFFFFFF))), //vai ter uma option
-                      Text('- clínica ',
-                          style: TextStyle(color: Color(0xFFFFFFFF))),
-                      Text('- Educação ',
-                          style: TextStyle(color: Color(0xFFFFFFFF))),
-                      Text('- Blog ',
-                          style: TextStyle(color: Color(0xFFFFFFFF))),
-                      Text('- Contato ',
-                          style: TextStyle(color: Color(0xFFFFFFFF))),
+
+                      Row(
+                        children: [
+                          Image.asset(
+                            '../assets/Inicio.png',
+                             height: 5,
+                          ),
+                          Text(' Inicio   ',
+                              style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 21)),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Image.asset(
+                            '../assets/conheca_a_gente.png',
+                            height: 5,
+                          ),
+                          Text(' Conheça a gente   ',
+                              style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 21
+                              )),
+                        ],
+                      ), //vai ter uma option
+                      Row(
+                        children: [
+                          Image.asset(
+                            '../assets/clinica.png',
+                             height: 5,
+                          ),
+                          Text(' Clínica   ',
+                              style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 21)),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Image.asset(
+                            '../assets/educacao.png',
+                             height: 5,
+                          ),
+                          Text(' Educação   ',
+                              style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 21)),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Image.asset(
+                            '../assets/blog.png',
+                             height: 5,
+                          ),
+                          Text(' Blog   ',
+                              style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 21)),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Image.asset(
+                            '../assets/contato.png',
+                             height: 5,
+                          ),
+                          Text(' Contato   ',
+                              style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 21)),
+                        ],
+                      ),
                     ],
                   ),
                 ],
@@ -102,6 +150,7 @@ class _webState extends State<web> {
               ],
             ),
             Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Text('Clínica',
                     style: TextStyle(fontSize: 55)), //colocar full esquerda
@@ -345,6 +394,7 @@ class _webState extends State<web> {
                   ],
                 ),
                 Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Text(
                       'Blog',
@@ -479,56 +529,114 @@ class _webState extends State<web> {
                       width: double.infinity,
                       fit: BoxFit.cover,
                     ),
-                    Container(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text('Newsletter'),
-                          Padding(
-                            padding: const EdgeInsets.all(16.0),
-                            child: Column(
+
+                    //ate aqui
+                    Column(
+                      children: [
+                        Container(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text('Newsletter'),
+
+                              //colocar o email
+
+                              Padding(
+                                padding: const EdgeInsets.all(50.0),
+                                child: ElevatedButton(
+                                  style: ButtonStyle(
+                                    backgroundColor:
+                                        MaterialStateProperty.all<Color>(Color(
+                                            0xFF7D37D2)), // Substitua pela cor desejada
+                                    shape: MaterialStateProperty.all<
+                                        OutlinedBorder>(RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(50),
+                                    )),
+                                  ),
+                                  onPressed: () {},
+                                  child: Text('Enviar'),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            color: Color(0xFF3B146B),
+                          ),
+                          child: Center(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                TextFormField(
-                                  controller: _textController,
-                                  decoration: InputDecoration(
-                                    labelText: 'Nome',
-                                    prefixIcon: Icon(Icons.person),
+                                Image.asset(
+                                  '../assets/logo.png',
+                                  height: 80,
+                                ),
+                                Container(
+                                  width: 200,
+                                  child: const Column(
+                                    children: [
+                                      Text('onde estamos?'),
+                                      Text(
+                                          'Lorem ipsum dolor sit amer, 500, Santo André | SP'),
+                                    ],
                                   ),
                                 ),
-                                SizedBox(height: 16.0),
-                                ElevatedButton(
-                                  onPressed: () {
-                                    // Aqui você pode realizar alguma ação com o valor do campo de texto
-                                    String nome = _textController.text;
-                                    print('Nome digitado: $nome');
-                                  },
-                                  child: Text('Enviar'),
+                                Column(
+                                  children: [
+                                    Text('Quer dizer oi?'),
+                                    Text('contato@saudetodes.com.br'),
+                                  ],
+                                ),
+                                Column(
+                                  children: [
+                                    Text('Encontre-nos nas redes sociais'),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Image.asset(
+                                          '../assets/instagram.png',
+                                        ),
+                                        Image.asset(
+                                          '../assets/facebook.png',
+                                        ),
+                                        Image.asset(
+                                          '../assets/linkedin.png',
+                                        ),
+                                        Image.asset(
+                                          '../assets/linkedin.png',
+                                        ),
+                                      ],
+                                    ),
+                                  ],
                                 ),
                               ],
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.all(50.0),
-                            child: ElevatedButton(
-                              style: ButtonStyle(
-                                backgroundColor:
-                                    MaterialStateProperty.all<Color>(Color(
-                                        0xFF7D37D2)), // Substitua pela cor desejada
-                                shape:
-                                    MaterialStateProperty.all<OutlinedBorder>(
-                                        RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(50),
-                                )),
-                              ),
-                              onPressed: () {},
-                              child: Text('Enviar'),
+                        ),
+                        Image.asset(
+                          '../assets/bg-white.png',
+                          height: 3,
+                        ),
+                        Container(
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              color: Color(0xFF3B146B),
                             ),
-                          ),
-                        ],
-                      ),
-                    ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                Text('2022 TODOS OS DIREITOS RESERVADOS.'),
+                                Text('CONVERGÊNCIA'),
+                              ],
+                            )),
+                      ],
+                    )
                   ],
-                )
+                ) //remover
               ],
             )
           ],
